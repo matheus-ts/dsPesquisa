@@ -1,5 +1,7 @@
 package com.dspesquisa.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -23,9 +25,10 @@ public class Games implements Serializable {
     @JoinColumn(name = "genre_id")
     private Genre genre;
 
-
     @OneToMany(mappedBy = "game")
     private List<Record> records = new ArrayList<>();
+
+    public Games(){};
 
     public Games(Long id, String title, Plataform platform, Genre genre) {
         this.id = id;
