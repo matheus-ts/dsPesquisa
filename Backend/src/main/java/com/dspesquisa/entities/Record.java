@@ -23,6 +23,10 @@ public class Record  implements Serializable {
     @JoinColumn(name = "game_id")
     private Games game;
 
+
+    public Record() {
+    }
+
     public Record(Long id, String name, Integer age, Instant moment, Games game) {
         this.id = id;
         this.name = name;
